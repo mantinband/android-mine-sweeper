@@ -414,6 +414,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
 
         secondsLeftToContinue = 5;
         timesUp = false;
+
         countDownThread = new Thread(){
             @Override
             public void run() {
@@ -751,7 +752,8 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
                 }
             }
         };
-
+        mRewardedVideoAd.loadAd("ca-app-pub-9056258295474141/5602323812",
+                new AdRequest.Builder().build());
         continueTime.start();
     }
 

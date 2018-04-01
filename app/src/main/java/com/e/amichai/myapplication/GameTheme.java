@@ -119,11 +119,13 @@ public class GameTheme {
     private void setLevelNumberOfBombs(){
         for (int i=1; i<NUMBER_OF_LEVELS; i++){
             gameLevels.get(i).setNumberOfBombsEasyMode((gameLevels.get(i).getBoardSizeEasyMode()*gameLevels.get(i).getBoardSizeEasyMode())/6);
-
-            gameLevels.get(i).setNumberOfBombsIntermediateMode((gameLevels.get(i).getBoardSizeIntermediateMode()*gameLevels.get(i).getBoardSizeIntermediateMode())/6+i);
-
-            if (i>6){
-                gameLevels.get(i).setNumberOfBombsHardMode(GameLevel.PRO_NUMBER_OF_MINES+(6*6)+6*2 );
+            if ((gameLevels.get(i).getBoardSizeIntermediateMode()*gameLevels.get(i).getBoardSizeIntermediateMode())/6+i > GameLevel.MAX_NUMBER_OF_MINES){
+                gameLevels.get(i).setNumberOfBombsIntermediateMode(GameLevel.MAX_NUMBER_OF_MINES);
+            } else {
+                gameLevels.get(i).setNumberOfBombsIntermediateMode((gameLevels.get(i).getBoardSizeIntermediateMode() * gameLevels.get(i).getBoardSizeIntermediateMode()) / 6 + i);
+            }
+            if (gameLevels.get(i).getNumberOfBombsHardMode() == GameLevel.MAX_BOARD_SIZE){
+                gameLevels.get(i).setNumberOfBombsHardMode(GameLevel.MAX_NUMBER_OF_MINES);
             } else {
                 gameLevels.get(i).setNumberOfBombsHardMode(GameLevel.PRO_NUMBER_OF_MINES+(i*i)+i*2 );
             }

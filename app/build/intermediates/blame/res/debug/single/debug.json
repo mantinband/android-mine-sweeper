@@ -8,12 +8,12 @@
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/seven_dark.png"
     },
     {
-        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
-        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e9dd2d250018886fbb1e77a516743d85/res/layout/notification_template_icon_group.xml"
-    },
-    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
+        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e9dd2d250018886fbb1e77a516743d85/res/layout/notification_template_icon_group.xml"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_mine.jpg.flat",

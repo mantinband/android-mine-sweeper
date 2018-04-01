@@ -612,6 +612,7 @@ public class gameThemeActivity extends AppCompatActivity {
         }
 
         MainActivity.mediaPlayer.start();
+        MainActivity.mediaPlayer.setLooping(true);
     }
 
     private void levelLockedMessage() {

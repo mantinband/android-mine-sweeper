@@ -12,6 +12,7 @@ public class GameLevel implements Serializable {
     public static final int EASY_NUMBER_OF_MINES = 4;
     public static final int INTERMEDIATE_NUMBER_OF_MINES = 16;
     public static final int PRO_NUMBER_OF_MINES = 38;
+    public static final int MAX_NUMBER_OF_MINES = 90;
 
     private String themeName;
 
