@@ -32,6 +32,7 @@ public class settingsActivity extends AppCompatActivity {
     private boolean resetChosen;
 
     public static boolean soundOn;
+    public static boolean levelSounds;
     public static boolean flagModeFloatingButton;
     public static float backgroudMusicVolume;
 
@@ -73,7 +74,11 @@ public class settingsActivity extends AppCompatActivity {
         dontClickButton = (Button) findViewById(R.id.dontClickButton);
 
         backgroundMusicSeekBar.setMax(maxVolume);
-        backgroundMusicSeekBar.setProgress(curVolume);
+        if (soundOn){
+            backgroundMusicSeekBar.setProgress(curVolume);
+        } else {
+            backgroundMusicSeekBar.setProgress(0);
+        }
 
 
 
@@ -115,13 +120,13 @@ public class settingsActivity extends AppCompatActivity {
         intermediateWinningPercentage.setText("Intermediate winning %: " + String.format("%.01f", MainActivity.gameStats.getWinningPercentageIntermediateMode())+"%");
         proWinningPercentage.setText("Pro winning %: " + String.format("%.01f", MainActivity.gameStats.getWinningPercentageProMode())+"%");
 
-        soundSwitch.setChecked(soundOn);
+        soundSwitch.setChecked(levelSounds);
 
         flagModeSwitch.setChecked(flagModeFloatingButton);
         soundSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                soundOn = b;
+                levelSounds = b;
             }
         });
 
@@ -175,6 +180,7 @@ public class settingsActivity extends AppCompatActivity {
                 if (i == 0){
                     MainActivity.mediaPlayer.pause();
                     curVolume = i;
+                    soundOn = false;
                 } else {
                     if (!MainActivity.mediaPlayer.isPlaying()){
                         MainActivity.mediaPlayer.start();
@@ -183,6 +189,7 @@ public class settingsActivity extends AppCompatActivity {
                     backgroudMusicVolume = 1 - log1;
                     MainActivity.mediaPlayer.setVolume(1 - log1, 1 - log1);
                     curVolume = i;
+                    soundOn = true;
                 }
             }
 

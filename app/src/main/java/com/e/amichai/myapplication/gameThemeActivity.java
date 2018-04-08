@@ -254,7 +254,7 @@ public class gameThemeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 GameTheme.currentGameLevel = GameTheme.classic;
                 GameTheme.theme.setThemeName("classic");
-                if (GameTheme.theme.equals("dark")) {
+                if (Theme.gameStyle.equals("dark")) {
                     Theme.gameStyle = "classic";
                     changeSong();
                 }
@@ -611,8 +611,11 @@ public class gameThemeActivity extends AppCompatActivity {
             MainActivity.mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.background_music);
         }
 
-        MainActivity.mediaPlayer.start();
-        MainActivity.mediaPlayer.setLooping(true);
+        if (settingsActivity.soundOn) {
+            MainActivity.mediaPlayer.setVolume(settingsActivity.backgroudMusicVolume, settingsActivity.backgroudMusicVolume);
+            MainActivity.mediaPlayer.start();
+            MainActivity.mediaPlayer.setLooping(true);
+        }
     }
 
     private void levelLockedMessage() {

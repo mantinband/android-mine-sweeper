@@ -91,7 +91,6 @@ public class GameTheme {
 
         currentGameLevel = gameLevels.get(0);
         trump.setLockedStatus(false);
-
         setLevelBoardSizes();
         setLevelNumberOfBombs();
     }
@@ -124,7 +123,7 @@ public class GameTheme {
             } else {
                 gameLevels.get(i).setNumberOfBombsIntermediateMode((gameLevels.get(i).getBoardSizeIntermediateMode() * gameLevels.get(i).getBoardSizeIntermediateMode()) / 6 + i);
             }
-            if (gameLevels.get(i).getNumberOfBombsHardMode() == GameLevel.MAX_BOARD_SIZE){
+            if (gameLevels.get(i).getBoardSizeProMode() == GameLevel.MAX_BOARD_SIZE){
                 gameLevels.get(i).setNumberOfBombsHardMode(GameLevel.MAX_NUMBER_OF_MINES);
             } else {
                 gameLevels.get(i).setNumberOfBombsHardMode(GameLevel.PRO_NUMBER_OF_MINES+(i*i)+i*2 );

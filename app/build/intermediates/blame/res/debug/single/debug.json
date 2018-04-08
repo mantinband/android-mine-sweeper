@@ -8,12 +8,12 @@
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/seven_dark.png"
     },
     {
-        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
-        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e9dd2d250018886fbb1e77a516743d85/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_mine.jpg.flat",
@@ -1604,6 +1604,10 @@
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/questionmark_dark.png"
     },
     {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_sound_on.png.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/sound_on.png"
+    },
+    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_two_dark.png.flat",
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/two_dark.png"
     },
@@ -1932,6 +1936,10 @@
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/gal_lose.jpg"
     },
     {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_upwork.jpg.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/upwork.jpg"
+    },
+    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_flag_pressed_dark.png.flat",
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/flag_pressed_dark.png"
     },
@@ -2178,6 +2186,10 @@
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_upwork2.jpg.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/upwork2.jpg"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/color-v11_abc_background_cache_hint_selector_material_light.xml.flat",
@@ -2642,6 +2654,10 @@
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_vitas_sunglasses_dark.jpg.flat",
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/vitas_sunglasses_dark.jpg"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_sound_off.png.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/sound_off.png"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/raw_game_start_quagmire.mp3.flat",

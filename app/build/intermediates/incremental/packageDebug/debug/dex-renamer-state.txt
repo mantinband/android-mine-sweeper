@@ -1,4 +1,4 @@
-#Sun Apr 01 13:19:55 IDT 2018
+#Fri Apr 06 19:05:33 IDT 2018
 base.0=/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -38,8 +38,8 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
     private int time = 0;
     private Button pauseGameButton;
 
-    int secondsLeftToContinue;
-    boolean timesUp;
+    private int secondsLeftToContinue;
+    private boolean timesUp;
 
     private MediaPlayer startGameMediaPlayer;
     private MediaPlayer winGameMediaPlayer;
@@ -53,6 +53,8 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
 
     private Button continueGameButton;
     private boolean rewardVideoClicked;
+
+    private Button soundOnOffButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +70,9 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         }
 
 
-
         AdView mAdView= new AdView(this);
         mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId("ca-app-pub-9056258295474141/3753052531");
+        mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -92,7 +93,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         numberOfMinesLeftTextView = (TextView) findViewById(R.id.numberOfMinesLeftTextView);
         flagButton = (FloatingActionButton) findViewById(R.id.flagModeFloatingActionButton);
         flagImageView = (ImageView) findViewById(R.id.flagImageView);
-
+        soundOnOffButton = (Button) findViewById(R.id.soundOnOffButton);
         if (!settingsActivity.flagModeFloatingButton){
             flagButton.setVisibility(View.INVISIBLE);
         }
@@ -100,7 +101,13 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         setSoundByTheme();
 
 
-        if (settingsActivity.soundOn && !GameTheme.currentGameLevel.getThemeName().contentEquals("classic")) {
+
+        if (settingsActivity.soundOn){
+            soundOnOffButton.setBackgroundResource(R.drawable.sound_on);
+        } else {
+            soundOnOffButton.setBackgroundResource(R.drawable.sound_off);
+        }
+        if (settingsActivity.soundOn && !GameTheme.currentGameLevel.getThemeName().contentEquals("classic") && settingsActivity.levelSounds) {
             startGameMediaPlayer.start();
         }
 
@@ -177,6 +184,28 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
             }
         });
 
+
+        soundOnOffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (settingsActivity.soundOn){
+                    if (startGameMediaPlayer.isPlaying()){
+                        startGameMediaPlayer.stop();
+                    }
+                    if (winGameMediaPlayer.isPlaying()){
+                        winGameMediaPlayer.stop();
+                    }
+                    soundOnOffButton.setBackgroundResource(R.drawable.sound_off);
+                    settingsActivity.soundOn = false;
+                    MainActivity.mediaPlayer.pause();
+
+                } else {
+                    soundOnOffButton.setBackgroundResource(R.drawable.sound_on);
+                    settingsActivity.soundOn = true;
+                    MainActivity.mediaPlayer.start();
+                }
+            }
+        });
         createBoard();
         board.setButtons(buttons);
 
@@ -289,7 +318,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         pauseGameButton.setBackgroundResource(R.drawable.pause_icon);
         gamePaused = false;
         board.reactivateButtons();
-        if (!MainActivity.mediaPlayer.isPlaying() && settingsActivity.curVolume != 0) {
+        if (!MainActivity.mediaPlayer.isPlaying() && settingsActivity.curVolume != 0 && settingsActivity.soundOn) {
             MainActivity.mediaPlayer.start();
         }
     }
@@ -353,7 +382,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
                             pauseGameButton.setEnabled(false);
                             board.unActivateButtons();
                             if (board.gameWon()) {
-                                if (settingsActivity.soundOn && !GameTheme.currentGameLevel.getThemeName().contentEquals("classic")){
+                                if (settingsActivity.soundOn && !GameTheme.currentGameLevel.getThemeName().contentEquals("classic") && settingsActivity.levelSounds){
                                     winGameMediaPlayer.start();
                                 }
 
@@ -608,7 +637,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         super.onDestroy();
     }
     private void loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-9056258295474141/5602323812",
+        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
                 new AdRequest.Builder().build());
     }
 
@@ -682,7 +711,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
             case "obama_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_obama);
                 winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama); break;
-            case "dalai lama_dark":
+            case "dalai lama dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_dalai_lama);
                 winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama); break;
             case "oprah_dark":
@@ -752,8 +781,6 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
                 }
             }
         };
-        mRewardedVideoAd.loadAd("ca-app-pub-9056258295474141/5602323812",
-                new AdRequest.Builder().build());
         continueTime.start();
     }
 

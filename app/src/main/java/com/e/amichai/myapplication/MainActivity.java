@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, "ca-app-pub-9056258295474141~8159201405");
+        //MobileAds.initialize(this, "ca-app-pub-9056258295474141~8159201405");
 
 
 
         Theme.gameStyle = "classic";
-
+        settingsActivity.levelSounds = true;
         currentActivity = "main";
 
         highScores = getSharedPreferences(HIGH_SCORE_FILE_NAME, Context.MODE_PRIVATE);
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onRestart() {
-        if (currentActivity.equals("main") && !mediaPlayer.isPlaying() && settingsActivity.curVolume != 0){
+        if (currentActivity.equals("main") && !mediaPlayer.isPlaying() && settingsActivity.curVolume != 0 && settingsActivity.soundOn){
             mediaPlayer.start();
         }
         super.onRestart();
@@ -556,7 +556,7 @@ public class MainActivity extends AppCompatActivity {
     private void openNextLevelIfLocked() {
         if ( GameTheme.currentGameLevel.hasNext() &&  GameTheme.currentGameLevel.getNextLevel().getLockedStatus() == true){
              GameTheme.currentGameLevel.getNextLevel().setLockedStatus(false);
-            Toast.makeText(getApplicationContext(),  GameTheme.currentGameLevel.getNextLevel().getThemeName()+" unlocked!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),  "Next level unlocked!",Toast.LENGTH_LONG).show();
         }
     }
 
