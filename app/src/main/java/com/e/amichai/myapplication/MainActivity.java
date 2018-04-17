@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         Theme.gameStyle = "classic";
         settingsActivity.levelSounds = true;
         currentActivity = "main";
@@ -551,8 +552,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+key                                     value
+"hosam malek number of messages:"       30
+"1 date"                                "04042010"
+"1 content"                             "hi how are you"
 
 
+*/
     private void openNextLevelIfLocked() {
         if ( GameTheme.currentGameLevel.hasNext() &&  GameTheme.currentGameLevel.getNextLevel().getLockedStatus() == true){
              GameTheme.currentGameLevel.getNextLevel().setLockedStatus(false);
