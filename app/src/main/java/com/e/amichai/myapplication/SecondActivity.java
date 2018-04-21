@@ -189,23 +189,19 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
             @Override
             public void onClick(View view) {
                 if (settingsActivity.soundOn){
-                    if (startGameMediaPlayer.isPlaying()){
+                    if (!GameTheme.currentGameLevel.getThemeName().equals("classic") && startGameMediaPlayer.isPlaying()){
                         startGameMediaPlayer.stop();
                     }
-                    if (winGameMediaPlayer.isPlaying()){
+                    if (!GameTheme.currentGameLevel.getThemeName().equals("classic") && winGameMediaPlayer.isPlaying()){
                         winGameMediaPlayer.stop();
                     }
                     soundOnOffButton.setBackgroundResource(R.drawable.sound_off);
                     settingsActivity.soundOn = false;
-                    try {
-                        MainActivity.mediaPlayer.pause();
-                    } catch (Exception ignored){}
+                    MainActivity.mediaPlayer.pause();
                 } else {
                     soundOnOffButton.setBackgroundResource(R.drawable.sound_on);
                     settingsActivity.soundOn = true;
-                    try {
-                        MainActivity.mediaPlayer.start();
-                    } catch (Exception ignored){}
+                    MainActivity.mediaPlayer.start();
                 }
             }
         });
@@ -217,9 +213,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
     private void pauseGame() {
         pauseGameButton.setBackgroundResource(R.drawable.play_icon);
         board.unActivateButtons();
-        try {
-            MainActivity.mediaPlayer.pause();
-        } catch (Exception ignored){}
+        MainActivity.mediaPlayer.pause();
         gamePaused = true;
 
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SecondActivity.this);
@@ -323,9 +317,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         gamePaused = false;
         board.reactivateButtons();
         if (!MainActivity.mediaPlayer.isPlaying() && settingsActivity.curVolume != 0 && settingsActivity.soundOn) {
-            try {
-                MainActivity.mediaPlayer.start();
-            } catch (Exception ignored){}
+            MainActivity.mediaPlayer.start();
         }
     }
 
@@ -333,9 +325,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
     protected void onStop() {
         if (gamePaused){
             if (!alertDialogChoice.equals("back to home") && !MainActivity.mediaPlayer.isPlaying() && settingsActivity.soundOn){
-                try {
-                    MainActivity.mediaPlayer.start();
-                } catch (Exception ignored){}
+                MainActivity.mediaPlayer.start();
             }
         } else {
             if (MainActivity.currentActivity.equals("second") && !board.gameIsOver()){
@@ -344,9 +334,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         }
 
         if (alertDialogChoice.equals("currently checking") && !MainActivity.currentActivity.equals("main")){
-            try {
-                MainActivity.mediaPlayer.pause();
-            } catch (Exception ignored){}
+            MainActivity.mediaPlayer.pause();
         }
         super.onStop();
     }
@@ -354,9 +342,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
     @Override
     protected void onRestart() {
         if (MainActivity.currentActivity.equals("second") && !MainActivity.mediaPlayer.isPlaying() && !gamePaused && settingsActivity.curVolume != 0) {
-            try {
-                MainActivity.mediaPlayer.start();
-            } catch (Exception ignored){}
+            MainActivity.mediaPlayer.start();
         }
         super.onRestart();
     }
@@ -684,28 +670,36 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
                 break;
             case "quagmire":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_quagmire);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire);
+                break;
             case "borat":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_borat);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat);
+                break;
             case "obama":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_obama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama);
+                break;
             case "dalai lama":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_dalai_lama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama);
+                break;
             case "oprah":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game);
+                break;
             case "timberlake":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.timberlake_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win);
+                break;
             case "einstein":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game);
+                break;
             case "gal":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_gal);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal);
+                break;
             case "vitas_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_vitas);
                 winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_vitas);
@@ -716,28 +710,36 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
                 break;
             case "quagmire_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_quagmire);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire);
+                break;
             case "borat_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_borat);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat);
+                break;
             case "obama_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_obama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama);
+                break;
             case "dalai lama dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_dalai_lama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama);
+                break;
             case "oprah_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game);
+                break;
             case "timberlake_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.timberlake_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win);
+                break;
             case "einstein_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game);
+                break;
             case "gal_dark":
                 startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_gal);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal); break;
+                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal);
+                break;
         }
     }
 

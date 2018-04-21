@@ -119,9 +119,7 @@ public class MainActivity extends AppCompatActivity {
         settingsActivity.backgroudMusicVolume = 1-log1;
 
         mediaPlayer.setVolume(1-log1,1-log1);
-        try{
-            mediaPlayer.start();
-        } catch (Exception ignored){}
+        mediaPlayer.start();
 
         mediaPlayer.setLooping(true);
 
@@ -132,9 +130,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         if (currentActivity.equals("main") && !mediaPlayer.isPlaying() && settingsActivity.curVolume != 0 && settingsActivity.soundOn){
-            try{
-                mediaPlayer.start();
-            } catch (Exception ignored){}
+            mediaPlayer.start();
         }
         super.onRestart();
     }
@@ -142,9 +138,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop(){
         if (currentActivity.equals("main") && mediaPlayer.isPlaying() ){
-            try {
-                mediaPlayer.pause();
-            } catch (Exception ignored){}
+            mediaPlayer.pause();
         }
         super.onStop();
     }
@@ -152,9 +146,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (currentActivity.equals("main") && mediaPlayer.isPlaying()) {
-            try {
-                mediaPlayer.pause();
-            } catch (Exception ignored){}
+            mediaPlayer.pause();
         }
         super.onBackPressed();
     }
