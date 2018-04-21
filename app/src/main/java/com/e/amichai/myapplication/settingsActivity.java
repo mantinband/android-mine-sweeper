@@ -178,12 +178,16 @@ public class settingsActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 if (i == 0){
-                    MainActivity.mediaPlayer.pause();
+                    try {
+                        MainActivity.mediaPlayer.pause();
+                    } catch (Exception ignored){}
                     curVolume = i;
                     soundOn = false;
                 } else {
                     if (!MainActivity.mediaPlayer.isPlaying()){
-                        MainActivity.mediaPlayer.start();
+                        try {
+                            MainActivity.mediaPlayer.start();
+                        } catch (Exception ignored){}
                     }
                     float log1 = (float) (Math.log(maxVolume - curVolume) / Math.log(maxVolume));
                     backgroudMusicVolume = 1 - log1;
@@ -234,7 +238,9 @@ public class settingsActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         if (MainActivity.currentActivity.equals("settings") && !MainActivity.mediaPlayer.isPlaying()) {
-            MainActivity.mediaPlayer.start();
+            try {
+                MainActivity.mediaPlayer.start();
+            } catch (Exception ignored){}
         }
         super.onRestart();
     }
@@ -250,7 +256,9 @@ public class settingsActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         if (!resetChosen && MainActivity.currentActivity.equals("settings") && MainActivity.mediaPlayer.isPlaying()){
-            MainActivity.mediaPlayer.pause();
+            try {
+                MainActivity.mediaPlayer.pause();
+            } catch (Exception ignored){}
         }
         super.onStop();
     }

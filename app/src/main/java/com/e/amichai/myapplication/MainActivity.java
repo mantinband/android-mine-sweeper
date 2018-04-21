@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //MobileAds.initialize(this, "ca-app-pub-9056258295474141~8159201405");
+        MobileAds.initialize(this, "ca-app-pub-9056258295474141~8159201405");
 
 
 
@@ -119,7 +119,10 @@ public class MainActivity extends AppCompatActivity {
         settingsActivity.backgroudMusicVolume = 1-log1;
 
         mediaPlayer.setVolume(1-log1,1-log1);
-        mediaPlayer.start();
+        try{
+            mediaPlayer.start();
+        } catch (Exception ignored){}
+
         mediaPlayer.setLooping(true);
 
         setArrowAnimation();
@@ -129,7 +132,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         if (currentActivity.equals("main") && !mediaPlayer.isPlaying() && settingsActivity.curVolume != 0 && settingsActivity.soundOn){
-            mediaPlayer.start();
+            try{
+                mediaPlayer.start();
+            } catch (Exception ignored){}
         }
         super.onRestart();
     }
@@ -137,7 +142,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop(){
         if (currentActivity.equals("main") && mediaPlayer.isPlaying() ){
-            mediaPlayer.pause();
+            try {
+                mediaPlayer.pause();
+            } catch (Exception ignored){}
         }
         super.onStop();
     }
@@ -145,7 +152,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (currentActivity.equals("main") && mediaPlayer.isPlaying()) {
-            mediaPlayer.pause();
+            try {
+                mediaPlayer.pause();
+            } catch (Exception ignored){}
         }
         super.onBackPressed();
     }

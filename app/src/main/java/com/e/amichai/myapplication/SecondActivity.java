@@ -72,7 +72,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
 
         AdView mAdView= new AdView(this);
         mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+        mAdView.setAdUnitId("ca-app-pub-9056258295474141/5602323812");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -197,12 +197,15 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
                     }
                     soundOnOffButton.setBackgroundResource(R.drawable.sound_off);
                     settingsActivity.soundOn = false;
-                    MainActivity.mediaPlayer.pause();
-
+                    try {
+                        MainActivity.mediaPlayer.pause();
+                    } catch (Exception ignored){}
                 } else {
                     soundOnOffButton.setBackgroundResource(R.drawable.sound_on);
                     settingsActivity.soundOn = true;
-                    MainActivity.mediaPlayer.start();
+                    try {
+                        MainActivity.mediaPlayer.start();
+                    } catch (Exception ignored){}
                 }
             }
         });
@@ -214,8 +217,9 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
     private void pauseGame() {
         pauseGameButton.setBackgroundResource(R.drawable.play_icon);
         board.unActivateButtons();
-
-        MainActivity.mediaPlayer.pause();
+        try {
+            MainActivity.mediaPlayer.pause();
+        } catch (Exception ignored){}
         gamePaused = true;
 
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SecondActivity.this);
@@ -319,7 +323,9 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         gamePaused = false;
         board.reactivateButtons();
         if (!MainActivity.mediaPlayer.isPlaying() && settingsActivity.curVolume != 0 && settingsActivity.soundOn) {
-            MainActivity.mediaPlayer.start();
+            try {
+                MainActivity.mediaPlayer.start();
+            } catch (Exception ignored){}
         }
     }
 
@@ -327,7 +333,9 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
     protected void onStop() {
         if (gamePaused){
             if (!alertDialogChoice.equals("back to home") && !MainActivity.mediaPlayer.isPlaying() && settingsActivity.soundOn){
-                MainActivity.mediaPlayer.start();
+                try {
+                    MainActivity.mediaPlayer.start();
+                } catch (Exception ignored){}
             }
         } else {
             if (MainActivity.currentActivity.equals("second") && !board.gameIsOver()){
@@ -336,7 +344,9 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         }
 
         if (alertDialogChoice.equals("currently checking") && !MainActivity.currentActivity.equals("main")){
-            MainActivity.mediaPlayer.pause();
+            try {
+                MainActivity.mediaPlayer.pause();
+            } catch (Exception ignored){}
         }
         super.onStop();
     }
@@ -344,7 +354,9 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
     @Override
     protected void onRestart() {
         if (MainActivity.currentActivity.equals("second") && !MainActivity.mediaPlayer.isPlaying() && !gamePaused && settingsActivity.curVolume != 0) {
-            MainActivity.mediaPlayer.start();
+            try {
+                MainActivity.mediaPlayer.start();
+            } catch (Exception ignored){}
         }
         super.onRestart();
     }
@@ -637,7 +649,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         super.onDestroy();
     }
     private void loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
+        mRewardedVideoAd.loadAd("ca-app-pub-9056258295474141/5602323812",
                 new AdRequest.Builder().build());
     }
 

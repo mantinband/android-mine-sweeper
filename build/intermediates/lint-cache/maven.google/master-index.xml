@@ -38,4 +38,7 @@
   <androidx.core/>
   <com.google.android.things/>
   <com.android.tools.build.jetifier/>
+  <tools.base.build-system.debug/>
+  <androidx.databinding/>
+  <androidx.constraintlayout/>
 </metadata>
