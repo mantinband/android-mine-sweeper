@@ -3,9 +3,11 @@ package com.e.amichai.myapplication;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -72,7 +74,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
 
         AdView mAdView= new AdView(this);
         mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId("ca-app-pub-9056258295474141/5602323812");
+        mAdView.setAdUnitId("ca-app-pub-3940256099942544/5224354917");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -635,7 +637,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         super.onDestroy();
     }
     private void loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-9056258295474141/5602323812",
+        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
                 new AdRequest.Builder().build());
     }
 
@@ -659,87 +661,92 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         return false;
     }
     private void setSoundByTheme() {
-        switch (GameTheme.currentGameLevel.getThemeName()) {
-            case "vitas":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_vitas);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_vitas);
-                break;
-            case "trump":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_trump);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_trump);
-                break;
-            case "quagmire":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_quagmire);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire);
-                break;
-            case "borat":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_borat);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat);
-                break;
-            case "obama":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_obama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama);
-                break;
-            case "dalai lama":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_dalai_lama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama);
-                break;
-            case "oprah":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game);
-                break;
-            case "timberlake":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.timberlake_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win);
-                break;
-            case "einstein":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game);
-                break;
-            case "gal":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_gal);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal);
-                break;
-            case "vitas_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_vitas);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_vitas);
-                break;
-            case "trump_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_trump);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_trump);
-                break;
-            case "quagmire_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_quagmire);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire);
-                break;
-            case "borat_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_borat);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat);
-                break;
-            case "obama_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_obama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama);
-                break;
-            case "dalai lama dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_dalai_lama);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama);
-                break;
-            case "oprah_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game);
-                break;
-            case "timberlake_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.timberlake_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win);
-                break;
-            case "einstein_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_start_game);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game);
-                break;
-            case "gal_dark":
-                startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_gal);
-                winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal);
-                break;
+        try {
+            switch (GameTheme.currentGameLevel.getThemeName()) {
+                case "vitas":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_vitas);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_vitas);
+                    break;
+                case "trump":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_trump);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_trump);
+                    break;
+                case "quagmire":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_quagmire);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire);
+                    break;
+                case "borat":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_borat);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat);
+                    break;
+                case "obama":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_obama);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama);
+                    break;
+                case "dalai lama":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_dalai_lama);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama);
+                    break;
+                case "oprah":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_start_game);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game);
+                    break;
+                case "timberlake":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.timberlake_start_game);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win);
+                    break;
+                case "einstein":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_start_game);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game);
+                    break;
+                case "gal":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_gal);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal);
+                    break;
+                case "vitas_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_vitas);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_vitas);
+                    break;
+                case "trump_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_trump);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_trump);
+                    break;
+                case "quagmire_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_quagmire);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_quagmire);
+                    break;
+                case "borat_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_borat);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_borat);
+                    break;
+                case "obama_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.start_game_obama);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_obama);
+                    break;
+                case "dalai lama dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_dalai_lama);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_dame_dalai_lama);
+                    break;
+                case "oprah_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_start_game);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.oprah_win_game);
+                    break;
+                case "timberlake_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.timberlake_start_game);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.justin_win);
+                    break;
+                case "einstein_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_start_game);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.einstein_win_game);
+                    break;
+                case "gal_dark":
+                    startGameMediaPlayer = MediaPlayer.create(this, R.raw.game_start_gal);
+                    winGameMediaPlayer = MediaPlayer.create(this, R.raw.win_game_gal);
+                    break;
+            }
+        } catch (Exception ignored){
+            MediaPlayer.create(this,
+                    Settings.System.DEFAULT_NOTIFICATION_URI);
         }
     }
 
