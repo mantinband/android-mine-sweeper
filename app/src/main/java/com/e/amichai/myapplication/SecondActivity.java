@@ -74,7 +74,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
 
         AdView mAdView= new AdView(this);
         mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId("ca-app-pub-3940256099942544/5224354917");
+        mAdView.setAdUnitId("ca-app-pub-9056258295474141/5602323812");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -637,7 +637,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
         super.onDestroy();
     }
     private void loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
+        mRewardedVideoAd.loadAd("ca-app-pub-9056258295474141/5602323812",
                 new AdRequest.Builder().build());
     }
 
