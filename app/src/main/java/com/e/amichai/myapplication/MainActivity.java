@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, "ca-app-pub-9056258295474141~8159201405");
+        //MobileAds.initialize(this, "ca-app-pub-9056258295474141~8159201405");
 
         Theme.gameStyle = "classic";
         settingsActivity.levelSounds = true;
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, R.raw.background_music);
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-        settingsActivity.curVolume = (audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)/6);
+        settingsActivity.curVolume = 2*(int) Math.log(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
         settingsActivity.maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 
         float log1=(float)(Math.log(settingsActivity.maxVolume -settingsActivity.curVolume)/Math.log(settingsActivity.maxVolume ));

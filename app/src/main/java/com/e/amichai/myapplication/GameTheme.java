@@ -91,7 +91,6 @@ public class GameTheme {
 
         currentGameLevel = gameLevels.get(0);
         trump.setLockedStatus(false);
-        trump_dark.setLockedStatus(false);
         setLevelBoardSizes();
         setLevelNumberOfBombs();
     }

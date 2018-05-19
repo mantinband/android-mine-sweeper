@@ -6,8 +6,8 @@ android {
         applicationId "com.e.amichai.myapplication"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 12
-        versionName "4.3"
+        versionCode 14
+        versionName "4.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
