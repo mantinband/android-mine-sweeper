@@ -81,9 +81,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, "ca-app-pub-9056258295474141~8159201405");
 
-
-
-
         Theme.gameStyle = "classic";
         settingsActivity.levelSounds = true;
         currentActivity = "main";
@@ -112,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, R.raw.background_music);
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-        settingsActivity.curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        settingsActivity.curVolume = (audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)/6);
         settingsActivity.maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 
         float log1=(float)(Math.log(settingsActivity.maxVolume -settingsActivity.curVolume)/Math.log(settingsActivity.maxVolume ));
@@ -320,6 +317,7 @@ public class MainActivity extends AppCompatActivity {
                 currentActivity = "theme";
                 Intent i = new Intent(MainActivity.this,  gameThemeActivity.class);
                 startActivityForResult(i, 3);
+
             }
         });
     }
@@ -496,6 +494,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this, settingsActivity.class);
         currentActivity = "settings";
         startActivityForResult(i,1);
+        overridePendingTransition( R.anim.fadein, R.anim.fadeout);
     }
 
     private void lockLevels() {
@@ -606,6 +605,7 @@ key                                     value
         game.putExtra("boardSize",boardSize);
         game.putExtra("numberOfMines",numberOfMines);
         startActivityForResult(game,2);
+        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
     }
 
 

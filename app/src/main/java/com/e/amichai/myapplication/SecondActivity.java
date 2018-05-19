@@ -74,7 +74,7 @@ public class SecondActivity extends AppCompatActivity implements RewardedVideoAd
 
         AdView mAdView= new AdView(this);
         mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId("ca-app-pub-9056258295474141/5602323812");
+        mAdView.setAdUnitId("ca-app-pub-9056258295474141/3753052531");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

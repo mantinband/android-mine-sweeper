@@ -8,12 +8,12 @@
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/seven_dark.png"
     },
     {
-        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
-        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e9dd2d250018886fbb1e77a516743d85/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_mine.jpg.flat",
@@ -2160,6 +2160,10 @@
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/57ed78b86e6b822ebf4f8c93d066477b/res/anim-v21/design_bottom_sheet_slide_out.xml"
     },
     {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/layout_activity_opener.xml.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/layout/activity_opener.xml"
+    },
+    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
@@ -2698,6 +2702,10 @@
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable_minesweeper_opener.png.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/minesweeper_opener.png"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",

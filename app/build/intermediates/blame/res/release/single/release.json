@@ -60,12 +60,12 @@
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-hdpi_ic_minesweeper_unopened_square.png.flat",
-        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/generated/res/pngs/release/drawable-hdpi/ic_minesweeper_unopened_square.png"
-    },
-    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable_a2.png.flat",
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/a2.png"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-hdpi_ic_minesweeper_unopened_square.png.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/generated/res/pngs/release/drawable-hdpi/ic_minesweeper_unopened_square.png"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
@@ -84,12 +84,12 @@
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/medium_zero.png"
     },
     {
-        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
-        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
-    },
-    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable_oprah_locked_dark.jpg.flat",
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/oprah_locked_dark.jpg"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -2244,6 +2244,10 @@
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0eded86aded5dcdaef75d5eec28445c5/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable_minesweeper_opener.png.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/drawable/minesweeper_opener.png"
+    },
+    {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-mdpi-v4_design_ic_visibility.png.flat",
         "source": "/home/amichai/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/57ed78b86e6b822ebf4f8c93d066477b/res/drawable-mdpi-v4/design_ic_visibility.png"
     },
@@ -2302,6 +2306,10 @@
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-mdpi_ic_launcher_background.png.flat",
         "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/generated/res/pngs/release/drawable-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/layout_activity_opener.xml.flat",
+        "source": "/home/amichai/AndroidStudioProjects/MineSweeper/app/src/main/res/layout/activity_opener.xml"
     },
     {
         "merged": "/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/res/merged/release/drawable-v21_abc_edit_text_material.xml.flat",

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Apr 22 09:10:41 IDT 2018
+#Sat May 19 17:37:31 IDT 2018
 0.baseType=DIRECTORY
 0.base=/home/amichai/AndroidStudioProjects/MineSweeper/app/build/intermediates/transforms/dex/release/0
 0.path=classes.dex
