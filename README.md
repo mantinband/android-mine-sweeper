@@ -1,7 +1,5 @@
 # Source code for "Minesweeper Deluxe"
-<p align="center">
-  <img src =https://lh3.googleusercontent.com/Xb9cCdvxWSWrWe1FIwgvugwWBHKf-tNAUPtmfK2hm9fxSSOKh2mSWeHc3cn957NPoCM=s180-rw />
-</p>  
+![game logo](https://lh3.googleusercontent.com/Xb9cCdvxWSWrWe1FIwgvugwWBHKf-tNAUPtmfK2hm9fxSSOKh2mSWeHc3cn957NPoCM=s180-rw)  
 ![game image](https://lh3.googleusercontent.com/NRjLfVlG9Z24fb5pcyIfTwBnu-rup7N_xsw2d6vPstvWszSFXkz6G9JdXpsLGRgPuw=w720-h310-rw)
 ![game image](https://lh3.googleusercontent.com/PoJvRt34T5M2Ce6fM0sx0pRJ7EL-XyN5JRHeOGLzs0Gk6Ym26b2kzxlOtwDIGwHN_Q=w720-h310-rw)
 ![game image](https://lh3.googleusercontent.com/MXgyZsHqly04sopdMlXsSN3tZTEFfFaxn_jGL0n8M7BO-N0VeCE9Dv_SFu_0YT9V=w720-h310-rw)
