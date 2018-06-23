@@ -1,4 +1,5 @@
-# Source code for "Minesweeper Deluxe"
+# Source code for ["Minesweeper Deluxe"](https://play.google.com/store/apps/details?id=com.e.amichai.myapplication)
+## https://play.google.com/store/apps/details?id=com.e.amichai.myapplication  
 ![game logo](https://lh3.googleusercontent.com/Xb9cCdvxWSWrWe1FIwgvugwWBHKf-tNAUPtmfK2hm9fxSSOKh2mSWeHc3cn957NPoCM=s180-rw)  
 ![game image](https://lh3.googleusercontent.com/NRjLfVlG9Z24fb5pcyIfTwBnu-rup7N_xsw2d6vPstvWszSFXkz6G9JdXpsLGRgPuw=w720-h310-rw)
 ![game image](https://lh3.googleusercontent.com/PoJvRt34T5M2Ce6fM0sx0pRJ7EL-XyN5JRHeOGLzs0Gk6Ym26b2kzxlOtwDIGwHN_Q=w720-h310-rw)
@@ -12,5 +13,3 @@
 ![game image](https://lh3.googleusercontent.com/o33QSzTg4xZbFT9LswFU3NvQFNN7XkJFdeOfGH6AGLISqnUdiNzpaU9sZZ-6BPs_8dA=w720-h310-rw)
 ![game image](https://lh3.googleusercontent.com/Khr4K3iiAh3vREQvqJ5npESUfent4jA6uF_3lLo0axPQZcT3T5x60ofx5oH1nlxpJWw=w720-h310-rw)
 ![game image](https://lh3.googleusercontent.com/wi4qi9cchrDyYQlqja5F-La8G9cNLnNb9EWuWaa2A2LT7Yfhh6Wy3gprekXPI-mHT8U=w720-h310-rw)
-
-## https://play.google.com/store/apps/details?id=com.e.amichai.myapplication
