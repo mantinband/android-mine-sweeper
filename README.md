@@ -1,5 +1,5 @@
 # Minesweeper Deluxe
-**source code for the Minesweeper Deluxe**  
+**source code for "Minesweeper Deluxe"**  
 ![app image](https://lh3.googleusercontent.com/Xb9cCdvxWSWrWe1FIwgvugwWBHKf-tNAUPtmfK2hm9fxSSOKh2mSWeHc3cn957NPoCM=s180-rw)  
 ![game image](https://lh3.googleusercontent.com/NRjLfVlG9Z24fb5pcyIfTwBnu-rup7N_xsw2d6vPstvWszSFXkz6G9JdXpsLGRgPuw=w720-h310-rw)
 ![game image](https://lh3.googleusercontent.com/PoJvRt34T5M2Ce6fM0sx0pRJ7EL-XyN5JRHeOGLzs0Gk6Ym26b2kzxlOtwDIGwHN_Q=w720-h310-rw)
